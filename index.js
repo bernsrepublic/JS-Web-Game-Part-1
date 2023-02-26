@@ -1,14 +1,41 @@
 const newImage = (src, position, left, bottom) => {
-  let greenCharacter = document.createElement("img");
-  greenCharacter.src = src;
-  greenCharacter.style.position = position;
-  greenCharacter.style.left = left;
-  greenCharacter.style.bottom = bottom;
-  document.body.append(greenCharacter);
+  let object = document.createElement("img");
+  object.src = src;
+  object.style.position = position;
+  object.style.left = left;
+  object.style.bottom = bottom;
+  document.body.append(object);
+  return object;
 };
+
 newImage("../assets/green-character.gif", "fixed", "100px", "100px");
 newImage("../assets/pine-tree.png", "fixed", "450px", "200px");
 newImage("../assets/tree.png", "fixed", "200px", "300px");
+newImage("../assets/pillar.png", "fixed", "350px", "100px");
+newImage("../assets/crate.png", "fixed", "150px", "200px");
+newImage("../assets/well.png", "fixed", "500px", "425px");
+
+const newItem = (src, position, left, bottom) => {
+  let object = newImage(src, position, left, bottom);
+  object.addEventListener("dblc'lick", () => {
+    object.remove();
+  });
+};
+
+newItem("../assets/sword.png", "fixed", "500px", "405px");
+newItem("../assets/sheild.png", "fixed", "165px", "185px");
+newItem("../assets/staff.png", "fixed", "600px", "100px");
+// let sword = document.createElement("img");
+// sword.src = "assets/sword.png";
+// sword.position = "fixed";
+// sword.left = "500px";
+// sword.bottom = "405px";
+// document.body.append(sword);
+
+// sword.addEventListener("click", function () {
+//   sword.remove();
+// });
+
 // let greenCharacter = document.createElement("img");
 // greenCharacter.src = "assets/green-character.gif";
 // greenCharacter.style.position = "fixed";
