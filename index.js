@@ -25,6 +25,26 @@ const newItem = (src, position, left, bottom) => {
 newItem("../assets/sword.png", "fixed", "500px", "405px");
 newItem("../assets/sheild.png", "fixed", "165px", "185px");
 newItem("../assets/staff.png", "fixed", "600px", "100px");
+
+function tile(src, left, bottom, width, height) {
+  for (let h = 0; h < height; h++) {
+    for (let w = 0; w < width; w++) {
+      newImage(src, left + w * 100, bottom + h * 100);
+    }
+  }
+}
+let horizon = window.innerHeight / 1.75;
+let heightOfSky = window.innerHeight - horizon;
+let heightOfGrass = horizon;
+
+tile(
+  "../assets/sky.png",
+  0,
+  horizon,
+  window.innerWidth / 105,
+  heightOfSky / 100
+);
+tile("../assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
 // let sword = document.createElement("img");
 // sword.src = "assets/sword.png";
 // sword.position = "fixed";
