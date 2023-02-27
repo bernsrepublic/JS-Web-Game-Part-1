@@ -3,18 +3,18 @@ const newImage = (src, position, left, bottom) => {
   let object = document.createElement("img");
   object.src = src;
   object.style.position = position;
-  object.style.left = left;
-  object.style.bottom = bottom;
+  object.style.left = left + "px";
+  object.style.bottom = bottom + "px";
   document.body.append(object);
   return object;
 };
 
-newImage("../assets/green-character.gif", "fixed", "100px", "100px");
-newImage("../assets/pine-tree.png", "fixed", "450px", "200px");
-newImage("../assets/tree.png", "fixed", "200px", "300px");
-newImage("../assets/pillar.png", "fixed", "350px", "100px");
-newImage("../assets/crate.png", "fixed", "150px", "200px");
-newImage("../assets/well.png", "fixed", "500px", "425px");
+newImage("../assets/green-character.gif", "fixed", 100, 100);
+newImage("../assets/pine-tree.png", "fixed", 450, 200);
+newImage("../assets/tree.png", "fixed", 200, 300);
+newImage("../assets/pillar.png", "fixed", 350, 100);
+newImage("../assets/crate.png", "fixed", 150, 200);
+newImage("../assets/well.png", "fixed", 500, 425);
 
 const newItem = (src, position, left, bottom) => {
   let object = newImage(src, position, left, bottom);
@@ -23,10 +23,10 @@ const newItem = (src, position, left, bottom) => {
   });
 };
 
-newItem("../assets/sword.png", "fixed", "500px", "405px");
-newItem("../assets/sheild.png", "fixed", "165px", "185px");
-newItem("../assets/staff.png", "fixed", "600px", "100px");
-
+newItem("../assets/sword.png", "fixed", 500, 405);
+newItem("../assets/sheild.png", "fixed", 165, 185);
+newItem("../assets/staff.png", "fixed", 600, 100);
+//****************************************************************** */
 function tile(src, left, bottom, width, height) {
   for (let h = 0; h < height; h++) {
     for (let w = 0; w < width; w++) {
@@ -46,6 +46,7 @@ tile(
   heightOfSky / 100
 );
 tile("../assets/grass.png", 0, 0, window.innerWidth / 100, heightOfGrass / 100);
+// ****************************************************************************
 // let sword = document.createElement("img");
 // sword.src = "assets/sword.png";
 // sword.position = "fixed";
