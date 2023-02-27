@@ -1,3 +1,4 @@
+//alert(test);
 const newImage = (src, position, left, bottom) => {
   let object = document.createElement("img");
   object.src = src;
