@@ -1,4 +1,10 @@
 //alert(test);
+//   Changes made:
+// - removed "position" in the function parameter for newImage
+// - re-arranged the function and invoking codes sequence/order
+// - added the "px" property-value in the function
+// - fixed the relevant path of the image. somehow using "../" doesn't work.
+
 function tile(url, left, bottom, width, height) {
   for (let h = 0; h < height; h++) {
     for (let w = 0; w < width; w++) {
