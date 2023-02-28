@@ -21,12 +21,15 @@ const newImage = (src, left, bottom) => {
   document.body.append(object);
   return object;
 };
-const newItem = (src, left, bottom) => {
-  let object = newImage(src, left, bottom);
-  object.addEventListener("dblc'lick", () => {
-    object.remove();
+function newItem(url, left, bottom) {
+  let item = newImage(url, left, bottom);
+  item.addEventListener("click", function () {
+    item.remove();
+    let inventoryItem = document.createElement("img");
+    inventoryItem.src = url;
+    inventory.append(inventoryItem);
   });
-};
+}
 
 let horizon = window.innerHeight / 1.75;
 let heightOfSky = window.innerHeight - horizon;
@@ -41,10 +44,10 @@ newImage("assets/pillar.png", 350, 100);
 newImage("assets/pine-tree.png", 450, 200);
 newImage("assets/crate.png", 150, 200);
 newImage("assets/well.png", 500, 425);
-
 newItem("assets/sword.png", 500, 405);
 newItem("assets/sheild.png", 165, 185);
 newItem("assets/staff.png", 600, 100);
+
 //****************************************************************** */
 // function tile(src, left, bottom, width, height) {
 //   for (let h = 0; h < height; h++) {
